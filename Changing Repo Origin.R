@@ -9,3 +9,8 @@
 #then push to repo
     #git remote add origin git@github.com:SheaZhao/in_class_coding_2.git
     #git push -u origin master
+    
+    #git@github.com:SheaZhao/in_class_coding_2.git
+    
+    #git pull https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git BRANCH_NAME
+    
