@@ -58,8 +58,18 @@ summarise(arrests_2, ave_Murder = mean(Murder), ave_Rape = mean(Rape))
 
 
 
-# Use a plot to investigate if there is any correlation between Murder and Rape rates?
-# Exclude the 3 states from the data set which have the highest rate of Rap57es.
+# 5.) Use a plot to investigate if there is any correlation between Murder and Rape rates?
+
+
+
+# 6.) Exclude the 3 states from the data set which have the highest rate of Rapes.
+
+rape_by_state$State[1:3]
+# Nevada, Alaska, & California have the highest rates
+
+top_3 <- c("Nevada", "Alaska", "California")
+minus_top_3 <- filter(rape_by_state, !State %in% top_3)
+minus_top_3 # the top 3 states are no longer there
 
 
 
