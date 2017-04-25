@@ -134,15 +134,14 @@ US_rRate.hist
 US_all_data <- select(arrests_2, -(State))
 head(US_all_data)
 
-# murder vs rape histogram
+# murder vs rape histogram w/ linear regression line & shadded confidence interval
 
 US_all_data.scatplot <- ggplot(US_all_data, aes(Murder, Rape, colour = "organe")) +
-    geom_point() 
+    geom_point() + geom_smooth(method=lm) 
 
 US_all_data.scatplot
 
 
-abline(lm(waiting ~ duration))
 
 
 
