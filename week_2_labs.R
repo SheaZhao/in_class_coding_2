@@ -167,20 +167,54 @@ minus_top_3 # the top 3 states are no longer there
 # libraries are already loaded, load data
 
 chickwts <- chickwts
-chickwts # 2 variables - "weight" (grams) & type of "feed"
+head(chickwts) # 2 variables - "weight" (grams) & type of "feed"
+
 
 
 # 1.) Plot a boxplot for each feed type to compare their weights.
 
+weight_by_feed.box <- ggplot(chickwts, aes(feed, weight, color = feed)) +
+    geom_boxplot()
+
+weight_by_feed.box # casein has the best average weight w/ sunflower second
+
+
 
 # 2.) For the above boxplots, assign different colors to each boxplot.
+
+weight_by_feed.box <- ggplot(chickwts, aes(feed, weight, fill = feed)) +
+    geom_boxplot()
+
+weight_by_feed.box 
+
+
 
 
 # 3.) According to the plots, which feed type results in a higher weight in average?
 
+# casein
+
+
+
 
 # 4.) Which feed type has the highest weight? Which one has the lowest?
+
+desc_weight <- arrange(chickwts, desc(weight), feed)
+desc_weight
+
+head(desc_weight)
+tail(desc_weight)
+
+# sunflower has a couple of outliers that give it the highest recorded weight.
+# horsebean has the lowest recorded weight
+
+
 
 
 # 5.) Plot a Violin plot for each feed type to compare the distributions of their weights.
 
+weight_byFeed.violin <- ggplot(chickwts, aes(feed, weight, fill = feed)) +
+    geom_violin(scale="area")
+# another color option: geom_violin(scale="area",color ="blue", fill = "grey")
+
+weight_byFeed.violin # this is just pretty
